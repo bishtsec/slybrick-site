@@ -23,7 +23,7 @@
 
   /* ───────── what is under the middle of the screen: nav highlight + the colour of the sly brick ───────── */
   var accentEls = [].slice.call(document.querySelectorAll('[data-accent]'));
-  var navSecs = ['what-we-do', 'idea', 'contact'].map(function (id) { return document.getElementById(id); });
+  var navSecs = ['what-we-do', 'track', 'open-source', 'about', 'contact'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
   var links = [].slice.call(document.querySelectorAll('.top nav a'));
   var lastAccent = '', ticking = false;
 
