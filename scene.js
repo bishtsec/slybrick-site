@@ -6,7 +6,7 @@
 
    Scrolling the page turns the shape (TURNS full turns over the whole page). Dragging it turns it too.
    site.js calls SlyScene.setAccent('#rrggbb') so the core, the one sly brick, wears the colour of the
-   line you are reading about. */
+   card you are reading about. */
 (function () {
   'use strict';
   var T3 = window.THREE;
