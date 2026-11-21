@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Slybrick | One clever brick.</title>
-<meta name="description" content="Slybrick is a security studio: web, API and mobile testing, vulnerability research, source review and retests — run by a researcher with a public CVE and 160+ coordinated-disclosure reports.">
+<meta name="description" content="Slybrick is a security studio working three lanes: pentesting, defense auditing and bug hunting — run by a researcher with 5 public CVEs and 160+ coordinated-disclosure reports.">
 <meta name="theme-color" content="#232428">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Slybrick">
 <meta property="og:url" content="https://slybrick.com/">
 <meta property="og:title" content="Slybrick | One clever brick.">
-<meta property="og:description" content="A security studio: web, API and mobile testing, research, source review and retests after a fix.">
+<meta property="og:description" content="A security studio in three lanes: pentesting, defense auditing and bug hunting.">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://slybrick.com/">
 <link rel="icon" type="image/svg+xml" href="assets/slybrick-favicon.svg">
@@ -25,11 +25,11 @@
 <div id="stage" aria-hidden="true"><canvas id="bg"></canvas><canvas id="gl"></canvas><div id="grain"></div></div>
 
 <header class="top">
-  <a class="brand" href="#top"><img src="assets/slybrick-lockup-reversed.svg" width="196" height="26" alt="Slybrick"></a>
+  <a class="brand" href="#top"><img class="lockup" src="assets/slybrick-lockup-reversed.svg" width="196" height="26" alt="Slybrick"><img class="markonly" src="assets/slybrick-mark-reversed.svg" width="32" height="26" alt="Slybrick"></a>
   <nav aria-label="Main">
-    <a href="#what-we-do">What we do</a>
-    <a href="#track">Track record</a>
-    <a href="#open-source">Open source</a>
+    <a class="lane-link" data-lane="pentest" href="#pentesting"><span class="chip"></span>Pentesting</a>
+    <a class="lane-link" data-lane="defense" href="#defense"><span class="chip"></span>Defense auditing</a>
+    <a class="lane-link" data-lane="bughunt" href="#bug-hunting"><span class="chip"></span>Bug hunting</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -37,113 +37,110 @@
 
 <main id="content">
 
-  <section class="sec hero" id="top" data-accent="marigold" aria-labelledby="h-hero">
+  <section class="sec hero" id="top" data-lane="home" data-form="home" aria-labelledby="h-hero">
     <div class="in">
       <p class="label reveal">A security studio</p>
       <h1 id="h-hero" class="reveal" style="--d:1">One clever brick.</h1>
-      <p class="lead reveal" style="--d:2">Slybrick is a security studio. We look for the loose brick: the one check a product forgot to make.</p>
-      <ul class="tags reveal" style="--d:3" aria-label="What we do">
-        <li class="label" style="--c: var(--coral)"><span class="chip"></span>Security testing</li>
-        <li class="label" style="--c: var(--mint)"><span class="chip"></span>Security research</li>
-        <li class="label" style="--c: var(--sky)"><span class="chip"></span>Retest and hardening</li>
+      <p class="lead reveal" style="--d:2">Slybrick looks for the loose brick: the one check a product forgot to make. We work three lanes, and the shape beside this text changes with each one.</p>
+      <ul class="tags reveal" style="--d:3" aria-label="The three lanes">
+        <li class="label" style="--c: var(--pentest)"><span class="chip"></span>Pentesting</li>
+        <li class="label" style="--c: var(--defense)"><span class="chip"></span>Defense auditing</li>
+        <li class="label" style="--c: var(--bughunt)"><span class="chip"></span>Bug hunting</li>
       </ul>
       <div class="actions reveal" style="--d:4">
-        <a class="btn" href="#what-we-do">See what we do</a>
+        <a class="btn" href="#pentesting">Start at lane one</a>
         <a class="link" href="#contact">Start an engagement</a>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="what-we-do" data-accent="marigold" aria-labelledby="h-what">
+  <!-- ───────── lane 1 · pentesting · red · the shape breaks open ───────── -->
+  <section class="sec lane" id="pentesting" data-lane="pentest" data-form="pentest" aria-labelledby="h-pen">
     <div class="in">
-      <p class="label reveal">What we do</p>
-      <h2 id="h-what" class="reveal" style="--d:1">Testing, research, review and retests.</h2>
-      <p class="lead reveal" style="--d:2">Manual offensive work against products that ship. Each service is small and does one job well — and we say that job in the first sentence, every time.</p>
+      <p class="lane-head reveal"><span class="lane-no">01</span><span class="lane-name">Pentesting</span></p>
+      <h2 id="h-pen" class="reveal" style="--d:1">We come at it the way an attacker would.</h2>
+      <p class="lead reveal" style="--d:2">Hand testing against something that ships. No scanner run dressed up as a report — every finding arrives as a request, a response, and what the attacker walks away with.</p>
 
       <ul class="lines">
-        <li class="card reveal" data-accent="coral" style="--c: var(--coral)">
+        <li class="card reveal">
           <div class="row">
             <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>Security testing</p>
+            <p class="label"><span class="chip"></span>Web</p>
           </div>
           <h3>Web application testing</h3>
-          <p class="txt">Login and session handling, who is allowed to see what, the business rules underneath, and anywhere user input reaches an interpreter. We report what we can show: the request, the response, and what an attacker gets.</p>
-          <a class="link" href="mailto:bisht@slybrick.com?subject=Web%20application%20testing">Talk to us about testing</a>
+          <p class="txt">Login and session handling, who is allowed to see what, the business rules underneath, and anywhere user input reaches an interpreter.</p>
+          <a class="link" href="mailto:bisht@slybrick.com?subject=Web%20application%20testing">Talk to us about web testing</a>
         </li>
 
-        <li class="card reveal" data-accent="mint" style="--c: var(--mint); --d:1">
+        <li class="card reveal" style="--d:1">
           <div class="row">
             <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>API assessment</p>
+            <p class="label"><span class="chip"></span>API</p>
           </div>
           <h3>API security testing</h3>
           <p class="txt">REST, GraphQL and gRPC. Object-level access control, fields the client was never meant to set, rate limits, and data that comes back to the wrong caller.</p>
           <a class="link" href="mailto:bisht@slybrick.com?subject=API%20security%20testing">Talk to us about APIs</a>
         </li>
 
-        <li class="card reveal" data-accent="sky" style="--c: var(--sky); --d:2">
+        <li class="card reveal" style="--d:2">
           <div class="row">
             <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>Mobile testing</p>
+            <p class="label"><span class="chip"></span>Mobile</p>
           </div>
           <h3>Mobile application testing</h3>
           <p class="txt">Android and iOS. Exported components and IPC, secrets shipped inside the binary, and the checks a client trusts the server to make and the server never does.</p>
           <a class="link" href="mailto:bisht@slybrick.com?subject=Mobile%20application%20testing">Talk to us about mobile</a>
         </li>
-
-        <li class="card reveal" data-accent="coral" style="--c: var(--coral); --d:1">
-          <div class="row">
-            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>Vulnerability research</p>
-          </div>
-          <h3>Research and CVE discovery</h3>
-          <p class="txt">Research aimed at your stack rather than a checklist: new bugs, and patches that closed one path while leaving its siblings open. Reported through coordinated disclosure.</p>
-          <a class="link" href="mailto:bisht@slybrick.com?subject=Vulnerability%20research">Talk to us about research</a>
-        </li>
-
-        <li class="card reveal" data-accent="mint" style="--c: var(--mint); --d:2">
-          <div class="row">
-            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>Code review</p>
-          </div>
-          <h3>Source code review</h3>
-          <p class="txt">Reading the code for the decisions a scanner cannot see — trust boundaries, deserialization, crypto use, and access checks that run too late.</p>
-          <a class="link" href="mailto:bisht@slybrick.com?subject=Source%20code%20review">Talk to us about review</a>
-        </li>
-
-        <li class="card reveal" data-accent="sky" style="--c: var(--sky); --d:3">
-          <div class="row">
-            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
-            <p class="label"><span class="chip"></span>Retest and hardening</p>
-          </div>
-          <h3>Retests after a fix</h3>
-          <p class="txt">A fix that closes one path often leaves its siblings open. After the fix ships, we check the fix and every neighbouring path, so the class is closed and not the instance.</p>
-          <a class="link" href="mailto:bisht@slybrick.com?subject=Retest%20after%20a%20fix">Talk to us about a retest</a>
-        </li>
       </ul>
+
+      <p class="note reveal">Testing happens only under a signed scope and authorization. Nothing destructive, nothing denial-of-service, nothing out of scope.</p>
     </div>
   </section>
 
-  <section class="sec" id="how" data-accent="sky" aria-labelledby="h-how">
+  <!-- ───────── lane 2 · defense auditing · blue · the shape reforms into layers ───────── -->
+  <section class="sec lane" id="defense" data-lane="defense" data-form="defense" aria-labelledby="h-def">
     <div class="in">
-      <p class="label reveal">How we work</p>
-      <h2 id="h-how" class="reveal" style="--d:1">Four stages, in order.</h2>
-      <p class="lead reveal" style="--d:2">You see what was tested, not just what was found.</p>
+      <p class="lane-head reveal"><span class="lane-no">02</span><span class="lane-name">Defense auditing</span></p>
+      <h2 id="h-def" class="reveal" style="--d:1">We read the controls, then check the fix held.</h2>
+      <p class="lead reveal" style="--d:2">The other half of the job: not where it breaks, but whether the thing meant to stop it is actually in the path. Source first, then the fix, then every path beside the fix.</p>
 
+      <ul class="lines">
+        <li class="card reveal">
+          <div class="row">
+            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
+            <p class="label"><span class="chip"></span>Source review</p>
+          </div>
+          <h3>Source code review</h3>
+          <p class="txt">Reading the code for the decisions a scanner cannot see — trust boundaries, deserialization, crypto use, and access checks that run too late to matter.</p>
+          <a class="link" href="mailto:bisht@slybrick.com?subject=Source%20code%20review">Talk to us about review</a>
+        </li>
+
+        <li class="card reveal" style="--d:1">
+          <div class="row">
+            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
+            <p class="label"><span class="chip"></span>Retest</p>
+          </div>
+          <h3>Retests after a fix</h3>
+          <p class="txt">A fix that closes one path often leaves its siblings open. After the fix ships we check the fix and every neighbouring path, so the class is closed and not the instance.</p>
+          <a class="link" href="mailto:bisht@slybrick.com?subject=Retest%20after%20a%20fix">Talk to us about a retest</a>
+        </li>
+      </ul>
+
+      <p class="label reveal" style="margin-top:34px"><span class="chip"></span>How an engagement runs</p>
       <ul class="idea">
-        <li class="reveal" data-accent="coral" style="--c: var(--coral); --d:1">
+        <li class="reveal" style="--d:1">
           <p class="label"><span class="chip"></span>Stage 1 · Scope and authorization</p>
           <p class="big">We agree what is in play, in writing. No testing without a signed scope.</p>
         </li>
-        <li class="reveal" data-accent="mint" style="--c: var(--mint); --d:2">
+        <li class="reveal" style="--d:2">
           <p class="label"><span class="chip"></span>Stage 2 · Manual testing</p>
-          <p class="big">Hand testing against auth, access control, business logic and injection. A scanner run is not a report.</p>
+          <p class="big">Hand testing against auth, access control, business logic and injection.</p>
         </li>
-        <li class="reveal" data-accent="sky" style="--c: var(--sky); --d:3">
+        <li class="reveal" style="--d:3">
           <p class="label"><span class="chip"></span>Stage 3 · Proof and escalation</p>
           <p class="big">Every finding gets a working proof, then is pushed to its real worst case before it is written up.</p>
         </li>
-        <li class="reveal" data-accent="coral" style="--c: var(--coral); --d:4">
+        <li class="reveal" style="--d:4">
           <p class="label"><span class="chip"></span>Stage 4 · Report and retest</p>
           <p class="big">Reproduction steps, impact, and a fix to aim at. We retest once you have shipped it.</p>
         </li>
@@ -151,13 +148,27 @@
     </div>
   </section>
 
-  <section class="sec" id="track" data-accent="mint" aria-labelledby="h-track">
+  <!-- ───────── lane 3 · bug hunting · yellow · the wall under the lens ───────── -->
+  <section class="sec lane" id="bug-hunting" data-lane="bughunt" data-form="bughunt" aria-labelledby="h-bug">
     <div class="in">
-      <p class="label reveal">Track record</p>
-      <h2 id="h-track" class="reveal" style="--d:1">What the work has produced.</h2>
-      <p class="lead reveal" style="--d:2">Our testing comes out of live research. The record is public where it can be.</p>
+      <p class="lane-head reveal"><span class="lane-no">03</span><span class="lane-name">Bug hunting</span></p>
+      <h2 id="h-bug" class="reveal" style="--d:1">Live research, on vendors who ship.</h2>
+      <p class="lead reveal" style="--d:2">Our testing comes out of a hunt that never stops. Research aimed at a stack rather than a checklist: new bugs, and patches that closed one path while leaving its siblings open. Reported through coordinated disclosure, every time.</p>
 
-      <ul class="stats reveal" style="--d:2">
+      <ul class="lines">
+        <li class="card reveal">
+          <div class="row">
+            <svg class="wall" viewBox="0 0 160 130" width="64" height="52" shape-rendering="crispEdges" aria-hidden="true"><path fill="#f4f8ff" d="M10 10h50v20h-50zM70 10h50v20h-50zM10 40h20v20h-20zM40 40h50v20h-50zM100 40h20v20h-20zM10 70h50v20h-50zM10 100h20v20h-20zM40 100h50v20h-50zM100 100h20v20h-20z"/><path style="fill:var(--c)" d="M100 70h50v20h-50z"/></svg>
+            <p class="label"><span class="chip"></span>Research</p>
+          </div>
+          <h3>Research and CVE discovery</h3>
+          <p class="txt">Vulnerability research against products we do not own a login to, taken to a vendor advisory and a CVE where the vendor issues one.</p>
+          <a class="link" href="mailto:bisht@slybrick.com?subject=Vulnerability%20research">Talk to us about research</a>
+        </li>
+      </ul>
+
+      <p class="label reveal" id="track" style="margin-top:34px"><span class="chip"></span>What the hunt has produced</p>
+      <ul class="stats reveal" style="--d:1">
         <li class="stat"><p class="num">5</p><p class="cap">public CVEs — one in Zabbix, four in GoCD</p></li>
         <li class="stat"><p class="num">160+</p><p class="cap">coordinated-disclosure reports filed</p></li>
         <li class="stat"><p class="num">44+</p><p class="cap">programs and vendor VRPs tested</p></li>
@@ -165,14 +176,14 @@
       </ul>
 
       <div class="rank reveal">
-        <p class="label"><span class="chip" style="--c: var(--marigold)"></span>Bugcrowd · October 2026</p>
+        <p class="label"><span class="chip"></span>Bugcrowd · October 2026</p>
         <p class="big">Top 14 in India and Top 36 worldwide in P1/P2, and Top 50 worldwide across all categories.</p>
       </div>
 
       <p class="lead reveal" style="margin-top:24px"><span class="mono">CVE-2026-59786</span> — Zabbix Server and Proxy, fixed in 7.0.29 / 7.4.13. <a class="link" href="https://nvd.nist.gov/vuln/detail/CVE-2026-59786" rel="noopener">Record on NVD</a>.</p>
       <p class="lead reveal" style="margin-top:12px"><span class="mono">CVE-2026-52740 / 52742 / 52743 / 52744</span> — four authorization bypasses in GoCD, fixed in 26.1.0. <a class="link" href="https://github.com/gocd/gocd/security/advisories?state=published" rel="noopener">GoCD advisories</a>.</p>
 
-      <p class="label reveal" style="margin-top:28px"><span class="chip" style="--c: var(--mint)"></span>Vendors who have acknowledged or paid our reports</p>
+      <p class="label reveal" style="margin-top:28px"><span class="chip"></span>Vendors who have acknowledged or paid our reports</p>
       <ul class="ack reveal">
         <li>Zabbix</li><li>Google OSS-VRP</li><li>Gliffy</li><li>HYPR</li><li>Affirm</li><li>GoCD</li><li>SingleStore</li><li>Sendcloud</li><li>Remitly</li>
       </ul>
@@ -181,14 +192,14 @@
     </div>
   </section>
 
-  <section class="sec" id="open-source" data-accent="coral" aria-labelledby="h-os">
+  <section class="sec" id="open-source" data-lane="home" data-form="home" aria-labelledby="h-os">
     <div class="in">
-      <p class="label reveal">Open source</p>
+      <p class="label reveal"><span class="chip"></span>Open source</p>
       <h2 id="h-os" class="reveal" style="--d:1">Tools we build, and give back.</h2>
       <p class="lead reveal" style="--d:2">We write our own tooling for our own hunts, and open-source what helps other researchers.</p>
 
       <ul class="idea">
-        <li class="reveal" data-accent="sky" style="--c: var(--sky); --d:2">
+        <li class="reveal" style="--d:2">
           <p class="label"><span class="chip"></span>hunt-rig</p>
           <p class="big">A reproducible hunting-workstation installer — a fresh machine is engagement-ready in one run.</p>
         </li>
@@ -201,19 +212,19 @@
     </div>
   </section>
 
-  <section class="sec" id="about" data-accent="sky" aria-labelledby="h-about">
+  <section class="sec" id="about" data-lane="home" data-form="home" aria-labelledby="h-about">
     <div class="in">
-      <p class="label reveal">About</p>
+      <p class="label reveal"><span class="chip"></span>About</p>
       <h2 id="h-about" class="reveal" style="--d:1">Who runs Slybrick.</h2>
       <p class="lead reveal" style="--d:2">Slybrick is run by Aditya Bisht, an offensive security researcher based in India (IST, UTC+5:30).</p>
-      <p class="txt reveal" style="--d:3; margin-top:16px; font-size:16px; color: var(--ink-soft)">He works authorization boundaries — BOLA/IDOR and cross-tenant isolation — sanitizer-bypass stored XSS, and the protocol seams where two components disagree about identity. He also ships production software, which is where most of the attack intuition comes from.</p>
+      <p class="txt reveal" style="--d:3; margin-top:16px; font-size:16px">He works authorization boundaries — BOLA/IDOR and cross-tenant isolation — sanitizer-bypass stored XSS, and the protocol seams where two components disagree about identity. He also ships production software, which is where most of the attack intuition comes from.</p>
 
       <ul class="idea">
-        <li class="reveal" data-accent="coral" style="--c: var(--coral); --d:2">
+        <li class="reveal" style="--d:2">
           <p class="label"><span class="chip"></span>How we operate</p>
           <p class="big">Authorized programs only. No out-of-scope testing, and no destructive or denial-of-service traffic.</p>
         </li>
-        <li class="reveal" data-accent="mint" style="--c: var(--mint); --d:3">
+        <li class="reveal" style="--d:3">
           <p class="label"><span class="chip"></span>On real data</p>
           <p class="big">The moment real personal data appears, we stop, record it, and report — never copy it, never publish it.</p>
         </li>
@@ -223,23 +234,23 @@
     </div>
   </section>
 
-  <section class="sec" id="idea" data-accent="mint" aria-labelledby="h-idea">
+  <section class="sec" id="idea" data-lane="home" data-form="home" aria-labelledby="h-idea">
     <div class="in">
-      <p class="label reveal">The idea</p>
+      <p class="label reveal"><span class="chip"></span>The idea</p>
       <h2 id="h-idea" class="reveal" style="--d:1">Every wall has one brick that behaves differently.</h2>
 
       <ul class="idea">
-        <li class="reveal" data-accent="mint" style="--c: var(--mint); --d:2">
-          <p class="label"><span class="chip"></span>What we look for</p>
-          <p class="big">The one check a product forgot to make.</p>
-        </li>
-        <li class="reveal" data-accent="coral" style="--c: var(--coral); --d:3">
-          <p class="label"><span class="chip"></span>How we look</p>
+        <li class="reveal" style="--c: var(--pentest); --d:2">
+          <p class="label"><span class="chip"></span>Lane one · we break it</p>
           <p class="big">The way an attacker would, one request at a time.</p>
         </li>
-        <li class="reveal" data-accent="sky" style="--c: var(--sky); --d:4">
-          <p class="label"><span class="chip"></span>What you get</p>
-          <p class="big">A report you can replay: every request, every response.</p>
+        <li class="reveal" style="--c: var(--defense); --d:3">
+          <p class="label"><span class="chip"></span>Lane two · we check the guard</p>
+          <p class="big">Whether the control meant to stop it is actually in the path.</p>
+        </li>
+        <li class="reveal" style="--c: var(--bughunt); --d:4">
+          <p class="label"><span class="chip"></span>Lane three · we go hunting</p>
+          <p class="big">The one check a product forgot to make, in something nobody has looked at yet.</p>
         </li>
       </ul>
 
@@ -247,13 +258,13 @@
     </div>
   </section>
 
-  <section class="sec" id="contact" data-accent="marigold" aria-labelledby="h-contact">
+  <section class="sec" id="contact" data-lane="home" data-form="home" aria-labelledby="h-contact">
     <div class="in">
-      <p class="label reveal">Contact</p>
+      <p class="label reveal"><span class="chip"></span>Contact</p>
       <h2 id="h-contact" class="reveal" style="--d:1">Write to us.</h2>
-      <p class="lead reveal" style="--d:2">Tell us what you need tested — a web app, an API or a mobile app — and when you need it. We reply within a business day.</p>
+      <p class="lead reveal" style="--d:2">Tell us which lane you need — a pentest, a defense audit, or research against your stack — and when you need it. We reply within a business day.</p>
       <div class="actions reveal" style="--d:3">
-        <a class="btn" href="mailto:bisht@slybrick.com?subject=Security%20test">Email us</a>
+        <a class="btn" href="mailto:bisht@slybrick.com?subject=Security%20engagement">Email us</a>
       </div>
       <p class="mail reveal" style="--d:3">bisht@slybrick.com</p>
       <p class="note reveal">Not sure what fits? Send the address and one sentence about the product, and we will tell you what we would test first. Testing happens only under a signed scope and authorization — nothing on this site is permission to test anything.</p>

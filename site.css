@@ -195,3 +195,100 @@ h3 { font: 600 20px/1.3 var(--display); color: #fff; }
 .rank .big { margin-top: 10px; font: 600 18px/1.4 var(--display); color: #fff; }
 .ack { list-style: none; padding: 0; margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
 .ack li { font: 600 13px/1 var(--pixel); letter-spacing: .02em; color: var(--ink-soft); border: 1px solid var(--line); padding: 9px 11px; }
+
+/* ═════════════════════ lanes ═════════════════════
+   Three lanes, three themes. Each lane sets --c once on its section and everything inside it —
+   chips, card borders, rules, stat tiles, the rail tick — reads that one token. The three.js shape
+   reforms into the lane's own form in the lane's colour at the same moment (scene.js + site.js). */
+
+:root {
+  --pentest: #ff4d4f;        /* lane 01 — we break it */
+  --defense: #5b9bff;        /* lane 02 — we check the guard */
+  --bughunt: #ffb627;        /* lane 03 — we go hunting */
+  --rail: 26px;
+}
+
+.sec[data-lane="home"]    { --c: var(--marigold); }
+.sec[data-lane="pentest"] { --c: var(--pentest); }
+.sec[data-lane="defense"] { --c: var(--defense); }
+.sec[data-lane="bughunt"] { --c: var(--bughunt); }
+.top nav a[data-lane="pentest"] { --c: var(--pentest); }
+.top nav a[data-lane="defense"] { --c: var(--defense); }
+.top nav a[data-lane="bughunt"] { --c: var(--bughunt); }
+
+/* the lane header: a number, a name, and a rule that carries the lane colour across the column */
+.lane-head {
+  display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px;
+  font: 600 13px/1.2 var(--pixel); letter-spacing: .06em; text-transform: uppercase;
+}
+.lane-no {
+  flex: none; background: var(--c); color: var(--on-color);
+  font: 600 13px/1 var(--pixel); letter-spacing: .06em; padding: 7px 9px;
+}
+.lane-name { color: var(--c); }
+.lane-head::after { content: ""; flex: 1 1 auto; height: 1px; background: linear-gradient(90deg, var(--c), transparent); }
+.lane-head + h2 { margin-top: 14px; }
+
+/* a lane section carries its colour at the edge of the column, so the theme is felt and not just seen */
+.lane .in { position: relative; padding-left: var(--rail); }
+.lane .in::before {
+  content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 3px;
+  background: linear-gradient(180deg, var(--c), rgba(255, 255, 255, .06) 72%, transparent);
+}
+.lane .card { border-left: 3px solid rgba(255, 255, 255, .08); }
+.lane .card:hover, .lane .card:focus-within { border-left-color: var(--c); }
+.lane .idea li { border-bottom-color: rgba(255, 255, 255, .12); }
+.lane .stat { border-top: 2px solid var(--c); }
+.lane .rank { border-left: 3px solid var(--c); }
+.lane .ack li:hover { border-color: var(--c); color: #fff; }
+.lane .note { border-top-color: rgba(255, 255, 255, .14); }
+
+/* nav: the three lanes wear their colour, the rest stays white */
+.top nav a.lane-link { display: inline-flex; align-items: center; gap: 8px; }
+.top nav a.lane-link .chip { width: 14px; height: 7px; transition: transform .2s; }
+.top nav a.lane-link:hover .chip, .top nav a.lane-link[aria-current="true"] .chip { transform: translateX(3px); }
+.top nav a.lane-link[aria-current="true"] { border-bottom-color: var(--c); }
+
+/* the rail: three ticks down the left edge, the one you are in is lit and long */
+.rail {
+  position: fixed; left: 14px; top: 50%; transform: translateY(-50%); z-index: 18;
+  display: flex; flex-direction: column; gap: 10px; pointer-events: auto;
+}
+.rail a {
+  display: block; width: 22px; height: 8px; background: rgba(255, 255, 255, .18);
+  transition: background-color .3s, width .3s; text-decoration: none;
+}
+.rail a:hover { background: rgba(255, 255, 255, .45); }
+.rail a[aria-current="true"] { background: var(--c); width: 38px; }
+.rail a[data-lane="pentest"] { --c: var(--pentest); }
+.rail a[data-lane="defense"] { --c: var(--defense); }
+.rail a[data-lane="bughunt"] { --c: var(--bughunt); }
+.rail .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* the hero's three lane tags keep their own colours */
+.tags .label { color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .top nav a.lane-link .chip, .rail a { transition: none; }
+}
+
+@media (max-width: 1180px) { .top nav a[href="#about"] { display: none; } }
+@media (max-width: 899px) {
+  .rail { display: none; }
+  .lane .in { padding-left: 22px; }
+}
+@media (max-width: 680px) {
+  .top nav a.lane-link { gap: 0; font-size: 0; }        /* the three chips stay, the words go */
+  .top nav a.lane-link .chip { width: 18px; height: 9px; }
+  .top nav a.lane-link[aria-current="true"] .chip { transform: none; }
+}
+@media (max-width: 560px) {
+  .top nav a:not([href="#contact"]):not(.lane-link) { display: none; }
+  .top .brand .lockup { display: none; }               /* the mark alone, still at a whole multiple (2 css px per logo pixel) */
+  .top .brand .markonly { display: block; width: 32px; height: 26px; }
+  .top nav { gap: 6px 16px; }
+}
+
+/* the lockup is the default; the mark only appears when the lockup will not fit (see the 560px rule above) */
+.brand .markonly { display: none; }
+.brand .lockup { display: block; }
